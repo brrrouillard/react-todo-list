@@ -22,6 +22,7 @@ class App extends Component {
   };
 
   addTodo = name => {
+    let x;
     if (name === "") return false;
     const newTodo = {
       name,
@@ -65,21 +66,19 @@ class App extends Component {
   render() {
     return (
       <>
-      <h1 className="title">Todos</h1>
-      <div className="App">
-        <AddTodo 
-        addTodo={this.addTodo}
-        changeCompleteAll={this.changeCompleteAll}
-        />
-        <Todos
-          todos={this.state.todos}
-          delTodo={this.delTodo}
-          changeComplete={this.changeComplete}
-        />
-        <Footer 
-        todos={this.state.todos}
-        />
-      </div>
+        <h1 className="title">Todos</h1>
+        <div className="App">
+          <AddTodo
+            addTodo={this.addTodo}
+            changeCompleteAll={this.changeCompleteAll}
+          />
+          <Todos
+            todos={this.state.todos}
+            delTodo={this.delTodo}
+            changeComplete={this.changeComplete}
+          />
+          <Footer todos={this.state.todos} />
+        </div>
       </>
     );
   }
